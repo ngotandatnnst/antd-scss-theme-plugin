@@ -1,4 +1,4 @@
 module.exports = {
-  modulePathIgnorePatterns: ['output'],
-  testURL: 'http://localhost/',
+	modulePathIgnorePatterns: ['output'],
+	testURL: 'http://localhost/',
 };
