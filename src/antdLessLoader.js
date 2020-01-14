@@ -1,9 +1,8 @@
 import lessLoader from 'less-loader';
 import { getOptions } from 'loader-utils';
 
-import { loadScssThemeAsLess } from './utils';
 import { getScssThemePath } from './loaderUtils';
-
+import { loadScssThemeAsLess } from './utils';
 
 /**
  * Modify less-loader's options with variable overrides extracted from the SCSS theme.
