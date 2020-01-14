@@ -34,7 +34,7 @@ jobs:
           paths:
             - ./node_modules
       - persist_to_workspace:
-          root: ~/antd-scss-theme-plugin
+          root: .
           paths:
           <<: *whitelist
 
@@ -52,7 +52,7 @@ jobs:
           path: ./build/dist
           destination: dist
       - persist_to_workspace:
-          root: ~/antd-scss-theme-plugin
+          root: .
           paths:
           <<: *whitelist
 
