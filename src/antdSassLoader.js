@@ -10,17 +10,32 @@ import { compileThemeVariables } from './utils';
  * Utility returning a node-sass importer that provides access to all of antd's theme variables.
  * @param {string} themeScssPath - Path to SCSS file containing Ant Design theme variables.
  * @param {string} contents - The compiled content of the SCSS file at themeScssPath.
+ * @param {Object} webpackContext - Webpack context to extract settings.
  * @returns {function} Importer that provides access to all compiled Ant Design theme variables
  *   when importing the theme file at themeScssPath.
  */
-export const themeImporter = (themeScssPath, contents) => (url, previousResolve, done) => {
+export const themeImporter = (themeScssPath, contents, webpackContext) => (url, previousResolve, done) => {
 	const request = urlToRequest(url);
 	const pathsToTry = importsToResolve(request);
 
 	const baseDirectory = path.dirname(previousResolve);
+
+	let aliases = {};
+	if (webpackContext) {
+		// eslint-disable-next-line no-underscore-dangle
+		aliases = webpackContext._compiler.options.resolve.alias ?? {};
+	}
+
 	for (let i = 0; i < pathsToTry.length; i += 1) {
 		const potentialResolve = pathsToTry[i];
 		if (path.resolve(baseDirectory, potentialResolve) === themeScssPath) {
+			done({ contents });
+			return;
+		}
+
+		const hasAliases = Object.getOwnPropertyNames(aliases).length !== 0;
+		const [root, ...dir] = potentialResolve.toString().split('/');
+		if (hasAliases && !!aliases[root] && path.resolve(aliases[root], ...dir) === themeScssPath) {
 			done({ contents });
 			return;
 		}
@@ -31,14 +46,15 @@ export const themeImporter = (themeScssPath, contents) => (url, previousResolve,
 /**
  * Modify sass-loader's options so that all antd variables are imported from the SCSS theme file.
  * @param {Object} options - Options for sass-loader.
+ * @param {Object} webpackContext - Webpack context to extract settings.
  * @return {Object} Options modified to includ a custom importer that handles the SCSS theme file.
  */
-export const overloadSassLoaderOptions = async options => {
+export const overloadSassLoaderOptions = async (options, webpackContext) => {
 	const newOptions = { ...options };
 	const scssThemePath = getScssThemePath(options);
 
 	const contents = await compileThemeVariables(scssThemePath);
-	const extraImporter = themeImporter(scssThemePath, contents);
+	const extraImporter = themeImporter(scssThemePath, contents, webpackContext);
 
 	let importer;
 	if ('importer' in options) {
@@ -69,7 +85,7 @@ export default function antdSassLoader(...args) {
 
 	const newLoaderContext = { ...loaderContext };
 
-	overloadSassLoaderOptions(options)
+	overloadSassLoaderOptions(options, newLoaderContext)
 		.then(newOptions => {
 			delete newOptions.scssThemePath; // eslint-disable-line no-param-reassign
 			newLoaderContext.query = newOptions;
