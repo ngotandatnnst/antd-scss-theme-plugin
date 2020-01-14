@@ -1,7 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import webpack from 'webpack';
 
-
 /**
  * Utility to compile webpack in a jest test and report back any errors.
  * @param {Object} config - A webpack configuration object.
@@ -9,13 +8,13 @@ import webpack from 'webpack';
  */
 // eslint-disable-next-line import/prefer-default-export
 export const compileWebpack = (config, done) => {
-  webpack(config, (compilerError, stats) => {
-    const error = compilerError || (stats.hasErrors() && stats.compilation.errors[0]);
-    if (error) {
-      done.fail(error);
-      done();
-    } else {
-      done();
-    }
-  });
+	webpack(config, (compilerError, stats) => {
+		const error = compilerError || (stats.hasErrors() && stats.compilation.errors[0]);
+		if (error) {
+			done.fail(error);
+			done();
+		} else {
+			done();
+		}
+	});
 };
