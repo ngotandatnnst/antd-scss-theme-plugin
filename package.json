@@ -1,7 +1,7 @@
 {
-  "name": "antd-scss-theme-plugin",
+  "name": "@inventium/antd-scss-theme-plugin",
   "description": "A Webpack plugin for customizing Ant Design with SCSS.",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "main": "build/dist/lib/index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production babel src --out-dir build/dist/lib",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/intoli/antd-scss-theme-plugin.git"
+    "url": "https://github.com/inventium-tech/antd-scss-theme-plugin.git"
   },
   "keywords": [
     "webpack",
@@ -25,12 +25,12 @@
     "sass-loader",
     "styles"
   ],
-  "author": "Intoli, LLC <contact@intoli.com>",
+  "author": "inventium Tech, <hmvalcarcel@gmail.com>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/intoli/antd-scss-theme-plugin/issues"
+    "url": "https://github.com/inventium-tech/antd-scss-theme-plugin/issues"
   },
-  "homepage": "https://github.com/intoli/antd-scss-theme-plugin",
+  "homepage": "https://github.com/inventium-tech/antd-scss-theme-plugin",
   "files": [
     "build/dist"
   ],
