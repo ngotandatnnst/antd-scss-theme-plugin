@@ -47,7 +47,7 @@ With it you can:
 This plugin is published as [antd-scss-theme-plugin](https://www.npmjs.com/package/@inventum/antd-scss-theme-plugin) on `npm`:
 
 ```bash
-npm install --save-dev antd-scss-theme-plugin
+npm install --save-dev @inventium/antd-scss-theme-plugin
 ```
 
 It extends the functionality of a `antd`, `less-loader` and `sass-loader` to accomplish its goals.
