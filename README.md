@@ -2,16 +2,18 @@
 </h1>
 
 <p align="left">
-    <a href="https://circleci.com/gh/inventium-tech/antd-scss-theme-plugin/tree/master">
-        <img src="https://img.shields.io/circleci/project/github/inventium-tech/antd-scss-theme-plugin/master.svg"
+    <a href="https://circleci.com/gh/ngotandatnnst/antd-scss-theme-plugin/tree/master">
+        <img src="https://img.shields.io/circleci/project/github/ngotandatnnst/antd-scss-theme-plugin/master.svg"
             alt="Build Status"></a>
-    <a href="https://github.com/inventium-tech/antd-scss-theme-plugin/blob/master/LICENSE.md">
-        <img src="https://img.shields.io/npm/l/@inventium/antd-scss-theme-plugin.svg"
+    <a href="https://github.com/ngotandatnnst/antd-scss-theme-plugin/blob/master/LICENSE.md">
+        <img src="https://img.shields.io/npm/l/@ngotandatnnst/antd-scss-theme-plugin.svg"
             alt="License"></a>
-    <a href="https://www.npmjs.com/package/@inventium/antd-scss-theme-plugin">
-        <img src="https://img.shields.io/npm/v/@inventium/antd-scss-theme-plugin.svg"
+    <a href="https://www.npmjs.com/package/@ngotandatnnst/antd-scss-theme-plugin">
+        <img src="https://img.shields.io/npm/v/@ngotandatnnst/antd-scss-theme-plugin.svg"
             alt="NPM Version"></a>
 </p>
+
+I fork this respository from [inventium-tech/antd-scss-theme-plugin](https://github.com/inventium-tech/antd-scss-theme-plugin) just for learn how to fork and change and publish to my own npmjs [I don't know how to name it =,="]. If you see this respository, please don't use it for your production, I just learning, use inventium-tech/antd-scss-theme-plugin or intoli/antd-scss-theme-plugin instead
 
 This repository is a fork of [intoli/antd-scss-theme-plugin](https://github.com/intoli/antd-scss-theme-plugin).
 
@@ -47,7 +49,7 @@ With it you can:
 This plugin is published as [antd-scss-theme-plugin](https://www.npmjs.com/package/@inventum/antd-scss-theme-plugin) on `npm`:
 
 ```bash
-npm install --save-dev @inventium/antd-scss-theme-plugin
+npm install --save-dev @ngotandatnnst/antd-scss-theme-plugin
 ```
 
 It extends the functionality of a `antd`, `less-loader` and `sass-loader` to accomplish its goals.
@@ -184,7 +186,7 @@ $primary-color: #fe8019;
 
 then the interface will no longer be based off of the default blue `#1890ff`, but rather a louder orange `#fe8019`:
 
-![Effects of Changing Primary Color to #fe8019](https://raw.githubusercontent.com/inventium-tech/antd-scss-theme-plugin/master/resources/blue-orange-comparison.png)
+![Effects of Changing Primary Color to #fe8019](https://raw.githubusercontent.com/ngotandatnnst/antd-scss-theme-plugin/master/resources/blue-orange-comparison.png)
 
 You can customize any Less variable that `antd` uses in this way: just relace `@` with a `$`, e.g., `@info-color` becomes `$info-color`.
 
