@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/inventium-tech/antd-scss-theme-plugin.git"
+    "url": "https://github.com/ngotandatnnst/antd-scss-theme-plugin.git"
   },
   "keywords": [
     "webpack",
@@ -25,12 +25,12 @@
     "sass-loader",
     "styles"
   ],
-  "author": "inventium Tech, <hmvalcarcel@gmail.com>",
+  "author": "ngotandatnnst, <ngotandatnnst@gmail.com>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/inventium-tech/antd-scss-theme-plugin/issues"
+    "url": "https://github.com/ngotandatnnst/antd-scss-theme-plugin/issues"
   },
-  "homepage": "https://github.com/inventium-tech/antd-scss-theme-plugin",
+  "homepage": "https://github.com/ngotandatnnst/antd-scss-theme-plugin",
   "files": [
     "build/dist"
   ],
