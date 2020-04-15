@@ -1,5 +1,5 @@
 {
-  "name": "@inventium/antd-scss-theme-plugin",
+  "name": "@ngotandatnnst/antd-scss-theme-plugin",
   "description": "A Webpack plugin for customizing Ant Design with SCSS.",
   "version": "1.1.0",
   "main": "build/dist/lib/index.js",
